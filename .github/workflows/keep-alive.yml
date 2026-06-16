@@ -26,19 +26,20 @@ jobs:
         run: |
           curl -fsS "${{ secrets.SAYDEE_URL }}/rest/v1/" \
             -H "apikey: ${{ secrets.SAYDEE_KEY }}" \
-            -o /dev/null -w "Saydee: %{http_code}\n"
+            -w "\nSaydee HTTP: %{http_code}\n"
+           
 
       - name: Ping ScooterMax Pro
         run: |
           curl -fsS "${{ secrets.SCOOTER_URL }}/rest/v1/" \
             -H "apikey: ${{ secrets.SCOOTER_KEY }}" \
-            -o /dev/null -w "ScooterMax: %{http_code}\n"
+            -w "\nScooterMax HTTP: %{http_code}\n" 
 
       - name: Ping Fixaro
         run: |
           curl -fsS "${{ secrets.FIXARO_URL }}/rest/v1/" \
             -H "apikey: ${{ secrets.FIXARO_KEY }}" \
-            -o /dev/null -w "Fixaro: %{http_code}\n"
+            -w "\nFixaro HTTP: %{http_code}\n" 
 
       - name: Heartbeat (evita que GitHub desactive el cron a los 60 dias)
         run: |
