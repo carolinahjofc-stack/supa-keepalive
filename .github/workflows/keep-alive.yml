@@ -18,9 +18,9 @@ jobs:
 
       - name: Ping Flowers & Gifts by Luna
         run: |
-          curl -fsS "${{ secrets.LUNA_URL }}/rest/v1/" \
+          curl -s "${{ secrets.LUNA_URL }}/rest/v1/" \
             -H "apikey: ${{ secrets.LUNA_KEY }}" \
-            -o /dev/null -w "Luna: %{http_code}\n"
+            -w "\nLuna HTTP: %{http_code}\n"
 
       - name: Ping Mentorias Maranata (Saydee)
         run: |
