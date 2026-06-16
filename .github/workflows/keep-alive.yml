@@ -37,7 +37,7 @@ jobs:
 
       - name: Ping Fixaro
         run: |
-          curl -fsS "${{ secrets.FIXARO_URL }}/rest/v1/" \
+          curl -sS "${{ secrets.FIXARO_URL }}/rest/v1/" \
             -H "apikey: ${{ secrets.FIXARO_KEY }}" \
             -w "\nFixaro HTTP: %{http_code}\n" 
 
