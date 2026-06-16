@@ -22,7 +22,7 @@ jobs:
             -H "apikey: ${{ secrets.LUNA_KEY }}" \
             -w "\nLuna HTTP: %{http_code}\n"
 
-     - name: Ping Mentorias Maranata (Saydee)
+      - name: Ping Mentorias Maranata (Saydee)
         run: |
           curl -sS "${{ secrets.SAYDEE_URL }}/rest/v1/" \
             -H "apikey: ${{ secrets.SAYDEE_KEY }}" \
