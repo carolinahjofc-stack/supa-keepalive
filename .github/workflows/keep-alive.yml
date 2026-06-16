@@ -31,7 +31,7 @@ jobs:
 
       - name: Ping ScooterMax Pro
         run: |
-          curl -fsS "${{ secrets.SCOOTER_URL }}/rest/v1/" \
+          curl -sS "${{ secrets.SCOOTER_URL }}/rest/v1/" \
             -H "apikey: ${{ secrets.SCOOTER_KEY }}" \
             -w "\nScooterMax HTTP: %{http_code}\n" 
 
